@@ -1,0 +1,44 @@
+
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Main {
+
+
+    public static void main(String[] args) {
+        Scanner ler = new Scanner(System.in);
+        int a = 1, b = 0, aux, busca;
+        ArrayList lista = new ArrayList();
+        System.out.println("Valor que deseja pesquisar: ");
+        busca = ler.nextInt();
+        int vet[] = new int[30];
+
+        for (int i = 0; i<30; i++){
+            aux = a;
+            a = a + b;
+            b = aux;
+            vet[i] = a;
+
+            lista.add(a);
+
+        }
+
+        for (int i = 0; i< vet.length; i++){
+
+            if (vet[i] == busca){
+                System.out.println("Valor encontrado : " + busca);
+                break;
+
+            } else if (i == 29) {
+                System.out.println("Valor nao encontrado: " + busca);
+
+            }
+        }
+
+        System.out.println(lista);
+
+    }
+
+
+}
